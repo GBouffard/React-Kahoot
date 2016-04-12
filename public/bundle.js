@@ -24371,6 +24371,9 @@
 
 	var React = __webpack_require__(1);
 	var Router = __webpack_require__(159);
+	var Repos = __webpack_require__(212);
+	var UserProfile = __webpack_require__(213);
+	var Notes = __webpack_require__(214);
 
 	var Profile = React.createClass({
 	  displayName: 'Profile',
@@ -24384,29 +24387,96 @@
 	  },
 
 	  render: function render() {
+	    console.log(this.props);
 	    return React.createElement(
 	      'div',
 	      { className: 'row' },
 	      React.createElement(
 	        'div',
 	        { className: 'col-md-4' },
-	        'User Profile Component'
+	        React.createElement(UserProfile, null)
 	      ),
 	      React.createElement(
 	        'div',
 	        { className: 'col-md-4' },
-	        'Repos Component'
+	        React.createElement(Repos, null)
 	      ),
 	      React.createElement(
 	        'div',
 	        { className: 'col-md-4' },
-	        'Notes Component'
+	        React.createElement(Notes, null)
 	      )
 	    );
 	  }
 	});
 
 	module.exports = Profile;
+
+/***/ },
+/* 212 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var React = __webpack_require__(1);
+
+	var Repos = React.createClass({
+	  displayName: 'Repos',
+
+	  render: function render() {
+	    return React.createElement(
+	      'div',
+	      null,
+	      'REPOS'
+	    );
+	  }
+	});
+
+	module.exports = Repos;
+
+/***/ },
+/* 213 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var React = __webpack_require__(1);
+
+	var UserProfile = React.createClass({
+	  displayName: 'UserProfile',
+
+	  render: function render() {
+	    return React.createElement(
+	      'div',
+	      null,
+	      'USER PROFILE'
+	    );
+	  }
+	});
+
+	module.exports = UserProfile;
+
+/***/ },
+/* 214 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var React = __webpack_require__(1);
+
+	var Notes = React.createClass({
+	  displayName: 'Notes',
+
+	  render: function render() {
+	    return React.createElement(
+	      'div',
+	      null,
+	      'NOTES'
+	    );
+	  }
+	});
+
+	module.exports = Notes;
 
 /***/ }
 /******/ ]);
