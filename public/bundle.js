@@ -24380,31 +24380,31 @@
 
 	  getInitialState: function getInitialState() {
 	    return {
-	      notes: [],
-	      bio: [],
-	      repos: []
+	      notes: ['note 1', 'note 2'],
+	      bio: {
+	        name: 'Guillaume'
+	      },
+	      repos: [1]
 	    };
 	  },
-
 	  render: function render() {
-	    console.log(this.props);
 	    return React.createElement(
 	      'div',
 	      { className: 'row' },
 	      React.createElement(
 	        'div',
 	        { className: 'col-md-4' },
-	        React.createElement(UserProfile, null)
+	        React.createElement(UserProfile, { username: this.props.params.username, bio: this.state.bio })
 	      ),
 	      React.createElement(
 	        'div',
 	        { className: 'col-md-4' },
-	        React.createElement(Repos, null)
+	        React.createElement(Repos, { repos: this.state.repos })
 	      ),
 	      React.createElement(
 	        'div',
 	        { className: 'col-md-4' },
-	        React.createElement(Notes, null)
+	        React.createElement(Notes, { notes: this.state.notes })
 	      )
 	    );
 	  }
@@ -24427,7 +24427,18 @@
 	    return React.createElement(
 	      'div',
 	      null,
-	      'REPOS'
+	      React.createElement(
+	        'p',
+	        null,
+	        ' REPOS '
+	      ),
+	      React.createElement(
+	        'p',
+	        null,
+	        ' Repos: ',
+	        this.props.repos,
+	        ' '
+	      )
 	    );
 	  }
 	});
@@ -24449,7 +24460,25 @@
 	    return React.createElement(
 	      'div',
 	      null,
-	      'USER PROFILE'
+	      React.createElement(
+	        'p',
+	        null,
+	        ' USER PROFILE: '
+	      ),
+	      React.createElement(
+	        'p',
+	        null,
+	        ' Username: ',
+	        this.props.username,
+	        ' '
+	      ),
+	      React.createElement(
+	        'p',
+	        null,
+	        ' Bio: ',
+	        this.props.bio.name,
+	        ' '
+	      )
 	    );
 	  }
 	});
@@ -24471,7 +24500,18 @@
 	    return React.createElement(
 	      'div',
 	      null,
-	      'NOTES'
+	      React.createElement(
+	        'p',
+	        null,
+	        ' NOTES '
+	      ),
+	      React.createElement(
+	        'p',
+	        null,
+	        ' Notes: ',
+	        this.props.notes,
+	        ' '
+	      )
 	    );
 	  }
 	});

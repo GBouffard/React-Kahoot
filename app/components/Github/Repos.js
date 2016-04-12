@@ -4,7 +4,8 @@ var Repos = React.createClass({
   render: function() {
     return (
       <div>
-        REPOS
+        <p> REPOS </p>
+        <p> Repos: {this.props.repos} </p>
       </div>
     );
   }
