@@ -7,5 +7,6 @@ How to run it
 ----
 ```
 npm run webpack-w
+cd public/
 open index.html
 ```
